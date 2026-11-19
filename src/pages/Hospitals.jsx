@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Search } from "lucide-react";
 
 import HospitalsData from "../data/HospitalsData";
-import Cities from "../Data/Cities";
-import { useSearchParams } from "react-router-dom";
+import Cities from "../data/Cities";
+
 
 function Hospitals() {
 
