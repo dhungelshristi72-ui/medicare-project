@@ -23,5 +23,9 @@ export const Navlinks = [
         name: "About",
         path: "/about"
     },
+    {
+        name: "Login/Signup",
+        path: "/login"
+    }
     
 ]

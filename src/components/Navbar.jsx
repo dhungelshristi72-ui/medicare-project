@@ -4,9 +4,6 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import { HeartPulse } from "lucide-react";
 function Navbar() {
-
-  
-  
   const [open, setOpen] = useState(false);
   const handleNavigation = () => {
     window.scrollTo({
@@ -14,7 +11,7 @@ function Navbar() {
       behavior: "smooth",
     });
   };
-  
+
   return (
     <nav className="bg-[#17132B] text-white fixed w-full z-1 top-0">
       <div className="flex justify-between items-center p-2 gap-8 font-bold">
@@ -31,7 +28,7 @@ function Navbar() {
         </NavLink>
 
         <button
-          className="sm:hidden bg-white text-black p-2 hover:scale-105 transition duration-300 ease-in-out"
+          className="sm:hidden bg-white text-red-500 p-2 hover:scale-105 transition duration-300 ease-in-out"
           onClick={() => setOpen(!open)}
         >
           {open ? <HiOutlineX /> : <HiOutlineMenu />}
@@ -43,20 +40,17 @@ function Navbar() {
               <Link
                 to={link.path}
                 onClick={handleNavigation}
-                className="gap-10 hover:text-[#E11D48] transition duration-300 ease-in-out"
+                className={`gap-10 hover:text-[#E11D48] transition duration-300 ease-in-out ${
+                  link.name == "Login/Signup"
+                    ? "bg-[#E11D48] text-white px-4 py-2 rounded-md hover:bg-[#C11232]"
+                    : "hover:text-[#E11D48]"
+                }`}
               >
                 {link.name}
               </Link>
             </li>
           ))}
         </ul>
-        
-        <Link
-          to="/login"
-          className="bg-[#E11D48] text-white px-4 py-2 rounded-md hover:bg-[#C11232] mr-4 transition duration-300 ease-in-out"
-        >
-          Login/Signup
-        </Link>
       </div>
 
       {open && (
